@@ -11,8 +11,8 @@ services:
     #   MONGO_INITDB_ROOT_USERNAME: max
     #   MONGO_INITDB_ROOT_PASSWORD: secret
     # - MONGO_INITDB_ROOT_USERNAME=max
-    # env_file:
-    #   - ./env/mongo.env
+    env_file:
+      - ./env/mongo.env
   # networks:
   #   - goals-net         // can have but compose will create a fresh new network automatically for all the container/services so no need to mention networks
 

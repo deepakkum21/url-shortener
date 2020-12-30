@@ -13,7 +13,7 @@ console.log(
 );
 
 mongoose.connect(
-  "mongodb://host.docker.internal:27017/urlShortener",
+  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@host.docker.internal:27017/urlShortener?authSource=admin`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
