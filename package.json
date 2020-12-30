@@ -1,0 +1,29 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "description": "a demo for ceating a url shortener using a full url",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon -L server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakkum21/url-shortener.git"
+  },
+  "author": "deepak kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakkum21/url-shortener/issues"
+  },
+  "homepage": "https://github.com/deepakkum21/url-shortener#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.9",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
