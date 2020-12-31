@@ -3,14 +3,7 @@ const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const app = express();
 
-console.log(
-  "object1",
-  process.env.MONGODB_USERNAME +
-    "  " +
-    process.env.MONGODB_PASSWORD +
-    "  " +
-    process.env.PORT
-);
+console.log("object1", "  " + process.env.PORT);
 
 mongoose.connect(
   `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@host.docker.internal:27017/urlShortener?authSource=admin`,
@@ -24,7 +17,8 @@ mongoose.connect(
       console.error(err);
     } else {
       console.log("CONNECTED TO MONGODB!!!");
-      app.listen(80);
+
+      app.listen(process.env.PORT || 5000);
     }
   }
 );
@@ -52,5 +46,3 @@ app.get("/:shortUrl", async (req, res) => {
 
   res.redirect(shortUrl.full);
 });
-
-app.listen(process.env.PORT || 5000);
