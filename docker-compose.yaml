@@ -22,6 +22,9 @@ services:
       dockerfile: ${DOCKER_FILE}
     ports:
       - "8000:8080"
+
+      # this command overrides the default CMD mentioned in the docker file
+    command: npm start
     volumes:
       - ./app:/app
       - /app/node_modules
